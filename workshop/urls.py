@@ -25,6 +25,6 @@ urlpatterns = [
     re_path(r'docs/', include_docs_urls(title='Todo API', description='RESTful API for Todo')),
 
     re_path(r'^$', views.api_root),
-    re_path(r'^', include('users.urls', namespace='users')),
-    re_path(r'^', include('todos.urls', namespace='todos')),
+    re_path(r'^', include(('users.urls', 'users'), namespace='users')),
+    re_path(r'^', include(('todos.urls', 'todos'), namespace='todos')),
 ]
