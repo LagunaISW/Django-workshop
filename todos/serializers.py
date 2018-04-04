@@ -8,7 +8,7 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Todo
-        fields = ('url', 'id', 'created', 'name', 'user')
+        fields = ('url', 'id', 'created', 'name', 'user', 'level')
         extra_kwargs = {
             'url': {
                 'view_name': 'todos:todo-detail',
